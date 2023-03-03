@@ -1,0 +1,15 @@
+<div #empleados fxLayout="row wrap" class="custom-list" fxLayoutGap="10px" fxLayoutAlign="space-arround center">
+  <mat-card *ngFor="let empleado of listaEmpleados; index as i; first as isFirst" fxFlex="20" class="custom-empleado">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>{{ empleado.surname + ' ' + empleado.surname2 + ', ' + empleado.name }}</mat-card-title>
+      <mat-card-subtitle>{{empleado.phone}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" class="custom-img">
+
+    <mat-card-actions fxLayoutGap="10px" fxLayoutAlign="end center">
+      <button mat-button (click)="goDetalle(empleado)">Detalles</button>
+      <button mat-button>Subir el sueldo</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

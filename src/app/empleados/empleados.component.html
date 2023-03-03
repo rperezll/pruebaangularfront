@@ -1,0 +1,17 @@
+<div fxLayout="row" class="custom-margin">
+  <mat-card fxFlex>
+    <mat-card-header>
+      <mat-card-title>Listado de empleados</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+
+      <app-buscador-empleados [listaEmpleados]="sourceEmpleados" (busqueda)="busqueda($event)"></app-buscador-empleados>
+
+      <app-listado-empleados [listaEmpleados]="empleados"></app-listado-empleados>
+
+    </mat-card-content>
+  </mat-card>
+</div>
+
+<app-custom-paginator [length]="sourceEmpleados.length"
+  (paginationEvent)="loadEmpleados($event)"></app-custom-paginator>
